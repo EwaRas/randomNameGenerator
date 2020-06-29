@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lottery Play</title>
+    <style>
+        html {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        button {
+            display: block;
+            margin: 50px auto;
+            padding: 20px 30px;
+            background-color: darkmagenta;
+            border: 5px solid cornsilk;
+            color: cornsilk;
+            font-weight: bolder;
+        }
+        
+        div {
+            margin: 10px;
+            font-size: 1em;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Draw a name for your kiddie</button>
+    <div></div>
+
+    <script>
+        function nameGenerator() {
+            const namesBoys = ['Oliver', 'Ralph', 'Aaron', 'Jasper', 'Nigel', 'Hunter', 'Ralph', 'Arthur', 'Freddie', 'Noah', 'Leo', 'Teddy', 'Jacob', 'Oscar', 'Charlie', 'Muhammad', 'Harry', 'George', 'Nacho'];
+            const namesGirls = ['Olivia', 'Orla', 'Edith', 'Bonnie', 'Lyla', 'Hallie', 'Lexi', 'Zoe', 'Maddison', 'Sarah', 'Felicity', 'Lydia', 'Aurora', 'Mia', 'Poppy', 'Ella', 'Ava', 'Isla', 'Amelia'];
+            const prefixes = ['The best names of the year are: ', 'The best name for your kiddie is ', 'What about no name? However if you have to choose... go for ', 'Names! Names! Names! ... Labels! Labels! Labels! What about ', 'Hmmmm .... maybe '];
+            const div = document.querySelector('div');
+
+            div.textContent = `${prefixes[Math.floor(Math.random() * prefixes.length)]}
+             ${namesBoys[Math.floor(Math.random() * namesBoys.length)]} (for a boy)
+             ${namesGirls[Math.floor(Math.random() * namesGirls.length)]} (for a girl).`
+        }
+
+        const btn = document.querySelector('button');
+
+        btn.addEventListener('click', nameGenerator);
+    </script>
+</body>
+
+</html>
